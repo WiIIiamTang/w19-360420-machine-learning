@@ -25,6 +25,9 @@ public class kNNMain
     DataSet.printDataSet(points);
     System.out.println("\nThe labels are " + DataSet.getLabels(points));
 
+    System.out.println("\nExample point: take the first DataPoint in the list.");
+    System.out.println(Arrays.toString(points.get(0).getX()) + " with label = " + points.get(0).getLabel());
+
 
 
 
@@ -65,7 +68,7 @@ public class kNNMain
     double bad = 0;
     double acc = 0;
     double averageAcc = 0;
-    int repeats = 1000;
+    int repeats = 1;
 
     for(int iterations = 0; iterations < repeats; iterations++)
     {
