@@ -248,7 +248,15 @@ public class DataSet {
   ////////////////////////////////////////////////////////////////////////////
 
   ////////////////////////////////////////////////////////////////////////////
-  // TASK 4: make a method here called distanceEuclid 
+  // TASK 4: make a method here called distanceEuclid
+
+  public static double distanceEuclid(DataPoint point1, DataPoint point2)
+  {
+    double distance = 0;
+
+    distance = Math.sqrt(Math.pow(point1.x[0] - point2.x[0], 2) + Math.pow(point1.x[1] - point2.x[1], 2) + Math.pow(point1.x[2] - point2.x[2], 2) + Math.pow(point1.x[3] - point2.x[3],2));
+    return distance;
+  }
 
   ////////////////////////////////////////////////////////////////////////////
 
