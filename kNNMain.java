@@ -32,8 +32,8 @@ public class kNNMain
 
 
     //TASK 2:Use the DataSet class to split the fullDataSet into Training and Held Out Test Dataset
-    training_set = DataSet.getTrainingSet(points, 0.80);
-    test_set = DataSet.getTestSet(points, 0.20);
+    training_set = DataSet.getTrainingSet(points, 0.70);
+    test_set = DataSet.getTestSet(points, 0.30);
 
     // TASK 4: write a new method in DataSet.java which takes as arguments two DataPoint objects,
     // and returns the Euclidean distance between those two points (as a double)
@@ -58,8 +58,10 @@ public class kNNMain
       System.out.println(nearest[i].getLabel());
 
     }
+	
+	
 
-    System.out.println();
+    System.out.println("This will predict " + classifier.predict(training_set, test_set.get(0)) + "\n");
 
 
     // TASK 6: loop over the datapoints in the held out test set, and make predictions for Each
@@ -68,7 +70,7 @@ public class kNNMain
     double bad = 0;
     double acc = 0;
     double averageAcc = 0;
-    int repeats = 1;
+    int repeats = 1000;
 
     for(int iterations = 0; iterations < repeats; iterations++)
     {
@@ -93,10 +95,7 @@ public class kNNMain
 
     averageAcc = averageAcc/repeats;
 
-    System.out.printf("\nPredicted on test set, got an average accuracy of %.6f percent over %d tries\n", averageAcc, repeats);
-
-    //tested with ten thousand tries, average accuracy with k = 3 gives 100.000000 (there was some incorrect but it was so small it rounded up to 100)
-
+    System.out.printf("\nPredicted on test set, got an average accuracy of %.2f percent over %d tries\n", averageAcc, repeats);
 
   }
 
