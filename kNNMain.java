@@ -58,8 +58,8 @@ public class kNNMain
       System.out.println(nearest[i].getLabel());
 
     }
-	
-	
+
+
 
     System.out.println("This will predict " + classifier.predict(training_set, test_set.get(0)) + "\n");
 
@@ -70,7 +70,7 @@ public class kNNMain
     double bad = 0;
     double acc = 0;
     double averageAcc = 0;
-    int repeats = 1000;
+    int repeats = 100;
 
     for(int iterations = 0; iterations < repeats; iterations++)
     {
