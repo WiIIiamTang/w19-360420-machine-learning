@@ -197,7 +197,13 @@ public class DataSet {
 
   /////////////////////////////////////////////////////////////////////////////////////
   // count & print frequencies of different labels
-  public static void printLabelFrequencies(List<DataPoint> fullDataSet) {
+  public static double printLabelFrequenciesAndReturnBaseAcc(List<DataPoint> fullDataSet) {
+
+
+    List<Double> freq = new ArrayList<Double>();
+    double max = 0;
+    double baseLineAcc = 0;
+    double points = 0;
 
     HashMap<String, Integer> labelFrequencies = new HashMap<String, Integer>();
 
@@ -212,7 +218,21 @@ public class DataSet {
     for (String temp : uniqueSet) {
       labelFrequencies.put(temp, Collections.frequency(labels, temp));
       System.out.println(temp + " " + Collections.frequency(labels, temp) + " dataPoints");
+      freq.add((double)Collections.frequency(labels,temp));
     }
+
+    max = freq.get(0);
+    for (int i = 0; i < freq.size(); i++)
+    {
+      max = Math.max(max, freq.get(i));
+    }
+    for (int i = 0; i < freq.size(); i++)
+    {
+      points = points + freq.get(i);
+    }
+    baseLineAcc = max/points;
+
+    return baseLineAcc;
   }
   ///////////////////////////////////////////////////////////////////////////////////////
 
