@@ -1,6 +1,6 @@
 # Report: Error Analysis
 ## Intro to Programming 360-420: Section 02
-## William Tang and Jason Dinh
+## William Tang
 
 ## Distributions of Model Accuracy, k = 3, over 1000 iterations
 
