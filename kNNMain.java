@@ -11,10 +11,10 @@ public class kNNMain
 
   public static void main(String... args) throws FileNotFoundException
   {
-    double[] accuracyArray = new double[1000];
-    double[] baseAccArray = new double[1000];
-    double [] recall = new double[1000];
-    double [] precision = new double[1000];
+    double[] accuracyArray = new double[100];
+    double[] baseAccArray = new double[100];
+    double [] recall = new double[100];
+    double [] precision = new double[100];
     double mean1 = 0;
     double sd1 = 0;
     double mean2 = 0;
@@ -24,7 +24,7 @@ public class kNNMain
     double mean4 = 0;
     double sd4 = 0;
 
-    for (int t = 0; t< 1000; t++)
+    for (int t = 0; t< 100; t++)
     {
 
       // TASK 1: Use command line arguments to point DataSet.readDataSet method to
@@ -58,7 +58,7 @@ public class kNNMain
 
       // TASK 5: Use the KNNClassifier class to determine the k nearest neighbors to a given DataPoint,
       // and make a print a predicted target label
-      int numNeighbours = 51;
+      int numNeighbours = 5;
       KNNClassifier classifier = new KNNClassifier(numNeighbours);
 /*
       DataPoint[] nearest = classifier.getNearestNeighbors(training_set, test_set.get(0));
@@ -94,18 +94,18 @@ public class kNNMain
 
       for(int i = 0; i < test_set.size(); i++)
       {
-        if(test_set.get(i).getLabel().equalsIgnoreCase(classifier.predict(training_set, test_set.get(i))) && test_set.get(i).getLabel().equals("benign"))
+        if(test_set.get(i).getLabel().equalsIgnoreCase(classifier.predict(training_set, test_set.get(i))) && test_set.get(i).getLabel().equals("1"))
         {
           //System.out.println(test_set.get(i).getLabel() + "\tgood\t" + classifier.predict(training_set, test_set.get(i)));
           good++;
           tp++;
         }
-        else if (test_set.get(i).getLabel().equalsIgnoreCase(classifier.predict(training_set, test_set.get(i))) && test_set.get(i).getLabel().equals("malignant"))
+        else if (test_set.get(i).getLabel().equalsIgnoreCase(classifier.predict(training_set, test_set.get(i))) && test_set.get(i).getLabel().equals("0"))
         {
           good++;
           tn++;
         }
-        else if (test_set.get(i).getLabel().equals("benign"))
+        else if (test_set.get(i).getLabel().equals("1"))
         {
           bad++;
           fn++;
