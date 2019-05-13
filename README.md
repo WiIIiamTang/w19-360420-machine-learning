@@ -1,3 +1,5 @@
+# hi using this branch for testing wine data classification, term project stuff
+
 # Machine Learning
 ## Dawson College 360-420-DW
 ## Winter 2019
