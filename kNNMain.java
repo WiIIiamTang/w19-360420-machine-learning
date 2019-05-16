@@ -11,10 +11,10 @@ public class kNNMain
 
   public static void main(String... args) throws FileNotFoundException
   {
-    double[] accuracyArray = new double[100];
-    double[] baseAccArray = new double[100];
-    double [] recall = new double[100];
-    double [] precision = new double[100];
+    double[] accuracyArray = new double[1000];
+    double[] baseAccArray = new double[1000];
+    double [] recall = new double[1000];
+    double [] precision = new double[1000];
     double mean1 = 0;
     double sd1 = 0;
     double mean2 = 0;
@@ -24,7 +24,7 @@ public class kNNMain
     double mean4 = 0;
     double sd4 = 0;
 
-    for (int t = 0; t< 100; t++)
+    for (int t = 0; t< 1000; t++)
     {
 
       // TASK 1: Use command line arguments to point DataSet.readDataSet method to
